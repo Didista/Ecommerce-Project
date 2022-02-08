@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/ecommers.png" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/roboto-fontface/css/roboto/roboto-fontface.css"
+    />
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Welcome to Modern Living</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-navbar">
+        <div class="logo">
+          <h2 class="animate__animated animate__zoomIn modern-living">
+            Modern Living
+          </h2>
+        </div>
+        <div>
+          <h2 class="home">Home, our favorite place to be!</h2>
+        </div>
+        <div class="nav-menu">
+          <div>
+            <a href="./index.html" class="home-button">Home</a>
+          </div>
+          <div class="navbar-buttons">
+            <a class="cart-button" href="./cart.html">Cart</a>
+            <i class="cart-button fab fa-opencart menu-icon"></i>
+          </div>
+          <div class="navbar-buttons">
+            <a class="admin-button" href="./admin.html">Admin</a>
+            <i class="fas fa-user-shield menu-icon"></i>
+          </div>
+          <!-- <div class="navbar-buttons contact">
+            Contact<i class="far fa-address-card"></i>
+          </div> -->
+        </div>
+      </div>
+      <div class="main-products">
+        <div class="title">
+          <h2 class="products-title">Cart</h2>
+          <hr class="line" />
+        </div>
+      </div>
+      <div class="cart-container"></div>
+    </div>
+    <script type="module" src="./src/cart.js"></script>
+  </body>
+</html>
