@@ -1,0 +1,9 @@
+@media only screen and (max-width: 750px) {
+  /*Products type*/
+
+  .main-products-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -91,7 +91,5 @@ function cartButtons(event) {
     });
     let totalPrice = `<div class="card-price">${total} RON</div>`;
     document.querySelector(".total-price-container").innerHTML = totalPrice;
-
-    
   }
 }

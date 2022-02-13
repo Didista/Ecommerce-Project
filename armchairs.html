@@ -7,6 +7,11 @@
     <link rel="icon" type="image/x-icon" href="./icons/ecommers.png" />
     <link
       rel="stylesheet"
+      media="screen and (max-width:750px)"
+      href="phone.css"
+    />
+    <link
+      rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link
@@ -24,13 +29,10 @@
   <body>
     <div class="main-container">
       <div class="main-navbar">
-        <div class="logo">
+        <div href="index.html" class="logo">
           <h2 class="animate__animated animate__zoomIn modern-living">
             Modern Living
           </h2>
-        </div>
-        <div>
-          <h2 class="home">Home, our favorite place to be!</h2>
         </div>
         <div class="nav-menu">
           <div class="navbar-buttons">
@@ -47,22 +49,19 @@
           </div>
         </div>
       </div>
+      <div>
+        <h2 class="home animate__animated animate__zoomIn">
+          Home, our favorite place to be!
+        </h2>
+      </div>
       <div class="main-products">
         <div class="title">
-          <h2 class="products-title">Admin</h2>
+          <h2 class="products-title">Armchairs</h2>
           <hr class="line" />
         </div>
       </div>
-      <div class="admin-products">
-        <div class="add-products">
-          <!-- Style button -->
-          <button type="button" class="btn btn-outline-secondary">
-            Add new product
-          </button>
-          <div class="all-admin-products"></div>
-        </div>
-      </div>
+      <div class="products-cards"></div>
     </div>
-    <script type="module" src="./src/admin.js"></script>
+    <script type="module" src="./src/app-armchairs.js"></script>
   </body>
 </html>

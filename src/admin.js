@@ -1,6 +1,5 @@
 window.addEventListener("load", async () => {
-  const productsURL =
-    "https://61e5b1f6c14c7a0017124e05.mockapi.io/First-Project";
+  const productsURL = "https://61e5b1f6c14c7a0017124e05.mockapi.io/Console";
   const result = await fetch(productsURL);
   const products = await result.json();
   const productsContainer = document.querySelector(".products-cards");
@@ -20,5 +19,3 @@ window.addEventListener("load", async () => {
     .join("");
   productsContainer.innerHTML = cards;
 });
-
-// Filter

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./icons/ecommers.png" />
     <link
+    rel="stylesheet"
+    media="screen and (max-width:750px)"
+    href="phone.css"
+  />
+    <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
@@ -29,11 +34,6 @@
             Modern Living
           </h2>
         </div>
-        <div>
-          <h2 class="home animate__animated animate__bounceInRight">
-            Let's stay home!
-          </h2>
-        </div>
         <div class="nav-menu">
           <div>
             <a class="home-button">Home</a>
@@ -46,8 +46,12 @@
             <a class="admin-button" href="./admin.html">Admin</a>
             <i class="fas fa-user-shield menu-icon"></i>
           </div>
-          <!-- <div class="contact">Contact<i class="far fa-address-card"></i></div> -->
         </div>
+      </div>
+      <div>
+        <h2 class="home animate__animated animate__jackInTheBox">
+          Let's stay home!
+        </h2>
       </div>
       <div class="main-products">
         <div class="title">
@@ -57,22 +61,16 @@
       </div>
       <div class="main-products-type">
         <div class="all-consoles">
-          <a href="index-all-items.html" class="title-console button-products"
-            >Consoles</a
-          >
-          <img src="./icons/consola.jpg" />
+          <a href="consoles.html" class="title-console button-products"
+            >Consoles<img src="./icons/consola.jpg" /></a>
         </div>
         <div class="all-sofas">
-          <a href="index-all-items.html" class="title-sofa button-products"
-            >Sofas</a
-          >
-          <img src="./icons/canapea.jpg" />
+          <a href="sofas.html" class="title-sofa button-products"
+            >Sofas<img src="./icons/canapea.jpg" /></a>
         </div>
         <div class="all-armchairs">
-          <a href="index-all-items.html" class="title-armchair button-products"
-            >Armchairs</a
-          >
-          <img src="./icons/fotoliu.jpg" />
+          <a href="armchairs.html" class="title-armchair button-products"
+            >Armchairs<img src="./icons/fotoliu.jpg" /></a>
         </div>
       </div>
       <div class="motto">
@@ -104,6 +102,8 @@
             </div>
       </footer>
     </div>
-    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="./src/app-consoles.js"></script>
+    <script type="module" src="./src/app-sofas.js"></script>
+    <script type="module" src="./src/armchairs.js"></script>
   </body>
 </html>

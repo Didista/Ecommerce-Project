@@ -7,6 +7,11 @@
     <link rel="icon" type="image/x-icon" href="./icons/ecommers.png" />
     <link
       rel="stylesheet"
+      media="screen and (max-width:750px)"
+      href="phone.css"
+    />
+    <link
+      rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link
@@ -29,14 +34,10 @@
             Modern Living
           </h2>
         </div>
-        <div>
-          <h2 class="home animate__animated animate__bounceInRight">
-            Home, our favorite place to be!
-          </h2>
-        </div>
         <div class="nav-menu">
-          <div>
-            <a href="./index.html" class="home-button">Home</a>
+          <div class="navbar-buttons">
+            <a href="./index.html" class="cart-button">Home</a>
+            <i class="cart-button fa fa-home"></i>
           </div>
           <div class="navbar-buttons">
             <a class="cart-button" href="./cart.html">Cart</a>
@@ -46,23 +47,21 @@
             <a class="admin-button" href="./admin.html">Admin</a>
             <i class="fas fa-user-shield menu-icon"></i>
           </div>
-          <!-- <div class="contact">Contact<i class="far fa-address-card"></i></div> -->
         </div>
+      </div>
+      <div>
+        <h2 class="home animate__animated animate__zoomIn">
+          Home, our favorite place to be!
+        </h2>
       </div>
       <div class="main-products">
         <div class="title">
-          <h2 class="products-title">Products</h2>
+          <h2 class="products-title">Consoles</h2>
           <hr class="line" />
         </div>
       </div>
-      <!-- <div class="all-consoles">
-        <a class="title-console button-products">Consoles</a>
-      </div>
-      <div class="all-sofas">
-        <a class="title-sofa button-products">Sofas</a>
-      </div> -->
       <div class="products-cards"></div>
     </div>
-    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="./src/app-consoles.js"></script>
   </body>
 </html>
