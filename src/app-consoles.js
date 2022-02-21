@@ -38,18 +38,32 @@ async function addProductToCart(event) {
   let cart;
   if (localStorage.getItem("cart") == null) {
     cart = [{ ...product, numberOfProducts: 1 }];
+    updateCartInfo();
   } else {
     //cart-ul primeste ce era inainte in local storage
     cart = JSON.parse(localStorage.getItem("cart"));
     const productInCart = cart.find(
       (productFromCart) => productFromCart.id == product.id
     );
-    if (productInCart != undefined) productInCart.numberOfProducts++;
-    else {
+    if (productInCart != undefined) {
+      productInCart.numberOfProducts++;
+      updateCartInfo();
+    } else {
       const selectedProduct = { ...product, numberOfProducts: 1 };
       cart.push(selectedProduct);
+      updateCartInfo();
     }
   }
   console.log(cart);
   localStorage.setItem("cart", JSON.stringify(cart));
+
+  //function update cart-nav-menu
+  function updateCartInfo() {
+    let info = 0;
+    cart.forEach((product) => {
+      info = Number(info) + product.numberOfProducts;
+    });
+    document.querySelector(".cart-count-info").innerHTML = info;
+    console.log(info);
+  }
 }

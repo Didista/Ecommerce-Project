@@ -3,13 +3,17 @@ window.addEventListener("load", () => {
 
   //Total price
 
+  const delivery = 50;
   let total = 0;
+
   if (cart) {
     cart.forEach((product) => {
       total = total + Number(product.price) * product.numberOfProducts;
       console.log(product.price);
     });
   }
+  let pricePlusDelivery = 0;
+  pricePlusDelivery = pricePlusDelivery + total + delivery;
   const productCards = cart
     .map(
       (product) =>
@@ -38,7 +42,13 @@ window.addEventListener("load", () => {
     )
     .join("");
 
-  let totalPrice = `<div class="card-price">${total} RON</div>`;
+  let totalPrice = `<div class="a" >
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">Total produse (cu TVA): ${total} RON</li>
+    <li class="list-group-item">Cost livrare: ${delivery} RON</li>
+    <li class="list-group-item price-delivery card-price">Pret Total : ${pricePlusDelivery} RON</li>
+  </ul>
+  </div>`;
   document.querySelector(".cart-container").innerHTML = productCards;
   document.querySelector(".total-price-container").innerHTML = totalPrice;
 });
@@ -60,11 +70,15 @@ function cartButtons(event) {
 
   if (targetButton.classList.contains("increment")) {
     productInCart.numberOfProducts++;
+    updateCartInfo();
   }
 
   //Decrese qty
   else if (targetButton.classList.contains("decrement")) {
-    if (productInCart.numberOfProducts > 1) productInCart.numberOfProducts--;
+    if (productInCart.numberOfProducts > 1) {
+      productInCart.numberOfProducts--;
+      updateCartInfo();
+    }
   }
 
   //Delete qty
@@ -75,13 +89,16 @@ function cartButtons(event) {
 
     cart = cart.filter((product) => product.id != productInCart.id);
     targetButton.parentNode.remove();
+    updateCartInfo();
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
   if (productInCart) {
     quantityParagraf.querySelector(".number-of-products").innerHTML =
       productInCart.numberOfProducts;
+    let pricePlusDelivery = 0;
     let total = 0;
+    const delivery = 50;
 
     // Multiply price by qty
 
@@ -89,9 +106,31 @@ function cartButtons(event) {
       total = total + Number(product.price) * product.numberOfProducts;
       console.log(product.price);
     });
-    let totalPrice = `<div class="card-price">${total} RON</div>`;
-    document.querySelector(".total-price-container").innerHTML = totalPrice;
 
-    
+    pricePlusDelivery = pricePlusDelivery + total + delivery;
+    let totalPrice = `<div class= "a">
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">Total produse (cu TVA): ${total} RON</li>
+    <li class="list-group-item">Cost livrare: ${delivery} RON</li>
+    <li class="list-group-item price-delivery card-price">Pret Total : ${pricePlusDelivery} RON</li>
+  </ul>
+  </div>`;
+    document.querySelector(".total-price-container").innerHTML = totalPrice;
+  } else {
+    localStorage.removeItem("cart", JSON.stringify(cart));
+    let bannerHidden = document.querySelector(".hidden");
+    let x = document.querySelector(".total-price-container");
+    x.classList.remove("total-price-container");
+    bannerHidden.classList.remove("hidden");
+    console.log("test");
+  }
+  //function update cart-nav-menu
+  function updateCartInfo() {
+    let info = 0;
+    cart.forEach((product) => {
+      info = Number(info) + product.numberOfProducts;
+    });
+    document.querySelector(".cart-count-info").innerHTML = info;
+    console.log(info);
   }
 }

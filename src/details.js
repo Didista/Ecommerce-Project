@@ -46,9 +46,9 @@ async function addProductToCart(event) {
     "https://61e5b1f6c14c7a0017124e05.mockapi.io/First-Project";
   const result = await fetch(productsURL + "/" + productId);
   const product = await result.json();
-  let cart;
+  let cart = [];
   if (localStorage.getItem("cart") == null) {
-    cart = [{ ...product, numberOfProducts: 1 }];
+    cart.push({ ...product, numberOfProducts: 1 });
   } else {
     //cart-ul primeste ce era inainte in local storage
     cart = JSON.parse(localStorage.getItem("cart"));

@@ -7,6 +7,11 @@
     <link rel="icon" type="image/x-icon" href="./icons/ecommers.png" />
     <link
       rel="stylesheet"
+      media="screen and (max-width:750px)"
+      href="phone.css"
+    />
+    <link
+      rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link
@@ -29,9 +34,6 @@
             Modern Living
           </h2>
         </div>
-        <div>
-          <h2 class="home">Home, our favorite place to be!</h2>
-        </div>
         <div class="nav-menu">
           <div class="navbar-buttons">
             <a href="./index.html" class="cart-button">Home</a>
@@ -47,6 +49,9 @@
           </div>
         </div>
       </div>
+      <div>
+        <h2 class="home">Home, our favorite place to be!</h2>
+      </div>
       <div class="main-products">
         <div class="title">
           <h2 class="products-title">Admin</h2>
@@ -55,11 +60,84 @@
       </div>
       <div class="admin-products">
         <div class="add-products">
-          <!-- Style button -->
-          <button type="button" class="btn btn-outline-secondary">
+          <!-- Form New Product -->
+          <form class="form">
+            <div class="form-group">
+              <label class="image-new-product" for="image">Image</label>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+                size="60"
+                type="text"
+                class="form-control"
+                id="image"
+                placeholder="Product Image URL/Location"
+              />
+            </div>
+            <div class="form-group">
+              <label class="title-new-product" for="title">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+                size="70"
+                type="text"
+                class="form-control"
+                id="title"
+                placeholder="Product title"
+              />
+            </div>
+            <div class="form-group">
+              <label class="description-new-product" for="description"
+                >Description</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+                size="60"
+                type="text"
+                class="form-control"
+                id="description"
+                placeholder="Product Description"
+              />
+            </div>
+            <div class="form-group">
+              <label class="price-new-product" for="price">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+                size="20"
+                type="text"
+                class="form-control"
+                id="price"
+                placeholder="Product Price"
+              />
+            </div>
+          </form>
+          <button class="add-new-product btn-admin btn btn-outline-secondary">
             Add new product
           </button>
-          <div class="all-admin-products"></div>
+          <div class="all-admin-products">
+            <table class="table table-sm">
+              <thead>
+                <tr class="firstRawTable">
+                  <th scope="col">Id</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody class="admin-table"></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

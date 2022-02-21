@@ -1,21 +1,47 @@
+const productTableBody = document.querySelector(".admin-products");
+const newProductBtn = document.querySelector(".add-new-product");
+const productsURL = "https://61e5b1f6c14c7a0017124e05.mockapi.io/First-Project";
 window.addEventListener("load", async () => {
-  const productsURL = "https://61e5b1f6c14c7a0017124e05.mockapi.io/Console";
   const result = await fetch(productsURL);
   const products = await result.json();
-  const productsContainer = document.querySelector(".products-cards");
-  const cards = products
+  const productTableBody = document.querySelector(".admin-table");
+  const table = products
     .map(
-      (products) =>
-        `<div class="card" style="width: 18rem;">
-  <img src="${products.img}" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">${products.title}</h5>
-    <p class="card-text">${products.description}</p> 
-    <h7 class="card-price">${products.price} RON </h7>
-    <a class="btn btn-outline-success" href="details.html?id=${products.id}">Details</a>
-  </div>
-</div>`
+      (product) =>
+        `<tr class="items">
+          <th scope="row">${product.id}</th>
+          <td><img src="${product.img}" class="img-admin"</td>
+          <td>${product.title}</td>
+          <td>${product.description}</td>
+          <td>${product.price} RON</td>
+          <td><button data-product-id =${product.id}>Del</button></td>
+          <td><button data-product-id =${product.id}>Edit</button></td>
+        </tr>`
     )
     .join("");
-  productsContainer.innerHTML = cards;
+  productTableBody.innerHTML = table;
 });
+
+productTableBody.addEventListener("click", adminButtons);
+function adminButtons(event) {
+  console.log(event.target);
+}
+newProductBtn.addEventListener("click", addNewProduct);
+async function addNewProduct() {
+  let result = await fetch(productsURL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title: "test", description: "test", price: "11" }),
+  });
+  let product = await result.json();
+  let newProductRaw = `<tr class="items">
+  <th scope="row">${product.id}</th>
+  <td><img src="${product.img}" class="img-admin"</td>
+  <td>${product.title}</td>
+  <td>${product.description}</td>
+  <td>${product.price} RON</td>
+  <td><button data-product-id =${product.id}>Del</button></td>
+  <td><button data-product-id =${product.id}>Edit</button></td>
+</tr>`;
+  productTableBody.innerHTML += newProductRaw;
+}
