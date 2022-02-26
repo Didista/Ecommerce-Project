@@ -1,3 +1,13 @@
+//function update cart-nav-menu
+
+function updateCartInfo(cart) {
+  let info = 0;
+  cart.forEach((product) => {
+    info = info + product.numberOfProducts;
+  });
+  document.querySelector(".cart-count-info").innerHTML = info;
+}
+
 window.addEventListener("load", () => {
   const cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -51,6 +61,7 @@ window.addEventListener("load", () => {
   </div>`;
   document.querySelector(".cart-container").innerHTML = productCards;
   document.querySelector(".total-price-container").innerHTML = totalPrice;
+  updateCartInfo(cart);
 });
 
 // Make an event for - + and delete buttons
@@ -70,14 +81,14 @@ function cartButtons(event) {
 
   if (targetButton.classList.contains("increment")) {
     productInCart.numberOfProducts++;
-    updateCartInfo();
+    updateCartInfo(cart);
   }
 
   //Decrese qty
   else if (targetButton.classList.contains("decrement")) {
     if (productInCart.numberOfProducts > 1) {
       productInCart.numberOfProducts--;
-      updateCartInfo();
+      updateCartInfo(cart);
     }
   }
 
@@ -89,7 +100,7 @@ function cartButtons(event) {
 
     cart = cart.filter((product) => product.id != productInCart.id);
     targetButton.parentNode.remove();
-    updateCartInfo();
+    updateCartInfo(cart);
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -116,21 +127,15 @@ function cartButtons(event) {
   </ul>
   </div>`;
     document.querySelector(".total-price-container").innerHTML = totalPrice;
-  } else {
+  }
+
+  // Remove Total - Add "Cosul este gol"
+
+  if (cart.length == 0) {
     localStorage.removeItem("cart", JSON.stringify(cart));
     let bannerHidden = document.querySelector(".hidden");
-    let x = document.querySelector(".total-price-container");
-    x.classList.remove("total-price-container");
+    let removeTotal = document.querySelector(".total-price-container");
+    removeTotal.classList.add("hidden");
     bannerHidden.classList.remove("hidden");
-    console.log("test");
-  }
-  //function update cart-nav-menu
-  function updateCartInfo() {
-    let info = 0;
-    cart.forEach((product) => {
-      info = Number(info) + product.numberOfProducts;
-    });
-    document.querySelector(".cart-count-info").innerHTML = info;
-    console.log(info);
   }
 }

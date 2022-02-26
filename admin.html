@@ -120,10 +120,19 @@
                 placeholder="Product Price"
               />
             </div>
+            <!-- Avem nevoie de ProducId pentru a pune in el ID-ul. Acesta este Hidden in pagina-->
+            <div class="form-group">
+              <input type="hidden" id="productId" name="productId" />
+            </div>
           </form>
-          <button class="add-new-product btn-admin btn btn-outline-secondary">
-            Add new product
-          </button>
+          <div class="buttons">
+            <button class="add-new-product btn-admin btn btn-outline-secondary">
+              Add new product
+            </button>
+            <button class="update-product btn-admin btn btn-outline-secondary">
+              Update product
+            </button>
+          </div>
           <div class="all-admin-products">
             <table class="table table-sm">
               <thead>
