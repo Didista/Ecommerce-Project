@@ -1,3 +1,14 @@
+//function update cart-nav-menu
+
+function updateCartInfo(cart) {
+  let info = 0;
+  cart.forEach((product) => {
+    info = Number(info) + product.numberOfProducts;
+  });
+  document.querySelector(".cart-count-info").innerHTML = info;
+  console.log(info);
+}
+
 window.addEventListener("load", async () => {
   const productsURL = "https://61e5b1f6c14c7a0017124e05.mockapi.io/Canapele";
   const result = await fetch(productsURL);
@@ -38,7 +49,7 @@ async function addProductToCart(event) {
   let cart;
   if (localStorage.getItem("cart") == null) {
     cart = [{ ...product, numberOfProducts: 1 }];
-    updateCartInfo();
+    updateCartInfo(cart);
   } else {
     //cart-ul primeste ce era inainte in local storage
     cart = JSON.parse(localStorage.getItem("cart"));
@@ -47,24 +58,13 @@ async function addProductToCart(event) {
     );
     if (productInCart != undefined) {
       productInCart.numberOfProducts++;
-      updateCartInfo();
+      updateCartInfo(cart);
     } else {
       const selectedProduct = { ...product, numberOfProducts: 1 };
       cart.push(selectedProduct);
-      updateCartInfo();
+      updateCartInfo(cart);
     }
   }
   console.log(cart);
   localStorage.setItem("cart", JSON.stringify(cart));
-
-  //function update cart-nav-menu
-
-  function updateCartInfo() {
-    let info = 0;
-    cart.forEach((product) => {
-      info = Number(info) + product.numberOfProducts;
-    });
-    document.querySelector(".cart-count-info").innerHTML = info;
-    console.log(info);
-  }
 }

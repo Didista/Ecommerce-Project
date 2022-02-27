@@ -6,21 +6,14 @@
     flex-direction: column;
     align-items: center;
   }
-  .sales-cart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .products-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 90px;
-  }
-
   /* Details Card */
 
   .detailCard {
+    display: flex;
+    flex-direction: column;
+  }
+  /* All card container */
+  .products-cards {
     display: flex;
     flex-direction: column;
   }

@@ -1,6 +1,6 @@
 //function update cart-nav-menu
 
-function updateCartInfo(cart) {
+export function updateCartInfo(cart) {
   let info = 0;
   cart.forEach((product) => {
     info = info + product.numberOfProducts;

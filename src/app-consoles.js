@@ -1,3 +1,16 @@
+//function update cart-nav-menu
+
+export function updateCartInfo(cart) {
+  let info = 0;
+  cart.forEach((product) => {
+    info = Number(info) + product.numberOfProducts;
+  });
+  document.querySelector(".cart-count-info").innerHTML = info;
+  console.log(info);
+}
+
+// import { updateCartInfo } from "./cart.js";
+
 window.addEventListener("load", async () => {
   const productsURL = "https://61e5b1f6c14c7a0017124e05.mockapi.io/Console";
   const result = await fetch(productsURL);
@@ -7,17 +20,17 @@ window.addEventListener("load", async () => {
     .map(
       (products) =>
         `<div class="card" style="width: 18rem;">
-  <img src="${products.img}" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">${products.title}</h5>
-    <p class="card-text">${products.description}</p> 
-    <h7 class="card-price">${products.price} RON </h7>
-    <div class="details-addtoCart">
-      <a class="btn btn-outline-success" href="details.html?id=${products.id}">Details</a>
-      <button data-product-id=${products.id} class=" addProductToCart btn btn-outline-success">Add to cart</button>
-    </div>
-  </div>
-</div>`
+          <img src="${products.img}" class="card-img-top">
+          <div class="card-body">
+           <h5 class="card-title">${products.title}</h5>
+           <p class="card-text">${products.description}</p> 
+           <h7 class="card-price">${products.price} RON </h7>
+           <div class="details-addtoCart">
+             <a class="btn btn-outline-success" href="details.html?id=${products.id}">Details</a>
+             <button data-product-id=${products.id} class=" addProductToCart btn btn-outline-success">Add to cart</button>
+           </div>
+          </div>
+        </div>`
     )
     .join("");
   productsContainer.innerHTML = cards;
@@ -38,7 +51,7 @@ async function addProductToCart(event) {
   let cart;
   if (localStorage.getItem("cart") == null) {
     cart = [{ ...product, numberOfProducts: 1 }];
-    updateCartInfo();
+    updateCartInfo(cart);
   } else {
     //cart-ul primeste ce era inainte in local storage
     cart = JSON.parse(localStorage.getItem("cart"));
@@ -47,23 +60,13 @@ async function addProductToCart(event) {
     );
     if (productInCart != undefined) {
       productInCart.numberOfProducts++;
-      updateCartInfo();
+      updateCartInfo(cart);
     } else {
       const selectedProduct = { ...product, numberOfProducts: 1 };
       cart.push(selectedProduct);
-      updateCartInfo();
+      updateCartInfo(cart);
     }
   }
   console.log(cart);
   localStorage.setItem("cart", JSON.stringify(cart));
-
-  //function update cart-nav-menu
-  function updateCartInfo() {
-    let info = 0;
-    cart.forEach((product) => {
-      info = Number(info) + product.numberOfProducts;
-    });
-    document.querySelector(".cart-count-info").innerHTML = info;
-    console.log(info);
-  }
 }
