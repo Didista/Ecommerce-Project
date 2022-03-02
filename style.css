@@ -33,6 +33,10 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.main-container {
+  overflow: visible;
+}
+
 .nav-menu {
   align-self: center;
   padding-right: 30px;

@@ -1,11 +1,31 @@
-@media screen and (max-width: 750px) {
-  /*Products type*/
+@media (max-width: 550px) {
+  /* Navbar */
+  .nav-menu {
+    align-self: center;
+    padding-right: 20px;
+  }
+  .home-button,
+  .navbar-buttons,
+  .input-group {
+    font-size: 10px;
+    gap: 5px;
+  }
 
+  /*Products type*/
+  .products-title {
+    font-size: 20px;
+  }
   .main-products-type {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  .title-sofa,
+  .title-console,
+  .title-armchair {
+    font-size: 20px;
+  }
+
   /* Details Card */
 
   .detailCard {
@@ -13,8 +33,36 @@
     flex-direction: column;
   }
   /* All card container */
+
   .products-cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  /* Footer */
+  .mobile h1,
+  .adress h1,
+  .email h1 {
+    font-size: 12px;
+  }
+  .mobile h2,
+  .adress h2,
+  .email-item {
+    font-size: 10px;
+  }
+  .mobile,
+  .adress,
+  .email {
+    gap: 10px;
+  }
+  /* Sales */
+  .sales img {
+    width: 300px;
+    height: 150px;
+  }
+  /* Count cart info */
+  .cart-count-info {
+    right: 147px;
+    margin-right: 2px;
+    font-size: 10px;
   }
 }

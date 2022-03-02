@@ -1,0 +1,33 @@
+@media (max-width: 950px) {
+  /*Products type*/
+  .all-consoles,
+  .all-sofas,
+  .all-armchairs {
+    display: flex;
+    flex-direction: column;
+  }
+  .all-consoles img,
+  .all-sofas img,
+  .all-armchairs img {
+    width: 180px;
+    height: 120px;
+  }
+  /* All card container */
+  .products-cards {
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+  }
+  .all-consoles:hover,
+  .all-consoles:focus,
+  .all-consoles:active,
+  .all-sofas:hover,
+  .all-sofas:focus,
+  .all-sofas:active,
+  .all-armchairs:hover,
+  .all-armchairs:focus,
+  .all-armchairs:active {
+    box-shadow: 10px 10px 5px #e6fff9;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
