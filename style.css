@@ -119,7 +119,7 @@ body {
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .line {
   width: 200px;
@@ -251,19 +251,19 @@ body {
   color: #008060;
 }
 .mobile,
-.adress,
+.address,
 .email {
   display: flex;
   gap: 20px;
   color: #008060;
 }
 .mobile h1,
-.adress h1,
+.address h1,
 .email h1 {
   font-size: 14px;
 }
 .mobile h2,
-.adress h2,
+.address h2,
 .email-item {
   font-size: 12px;
 }
@@ -524,7 +524,8 @@ body {
   padding: 20px;
 }
 .all-admin-products {
-  margin-top: 20px;
+  margin: 20px;
+  font-size: 15px;
 }
 .img-admin {
   width: 50px;
@@ -535,7 +536,9 @@ body {
 .firstRawTable {
   color: #008060;
 }
+
 /* New product */
+
 .form {
   display: flex;
   flex-direction: column;
@@ -547,20 +550,19 @@ body {
 .price-new-product,
 .image-new-product,
 .description-new-product {
-  color: #008060;
   font-weight: bold;
   width: 100px;
+  color: #d493e4;
 }
 .form-control {
-  font-size: 13px;
+  font-size: 12px;
 }
 .form-group {
   display: flex;
   gap: 20px;
 }
 .adminButton {
-  font-size: 16px;
+  font-size: 25px;
   width: 80px;
-  height: 20px;
-  /* font-weight: bold; */
+  height: 30px;
 }

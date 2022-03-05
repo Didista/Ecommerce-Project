@@ -1,10 +1,13 @@
-@media (max-width: 950px) {
+@media (max-width: 970px) {
   /*Products type*/
+  .main-products-type {
+    gap: 35px;
+    margin-top: 25px;
+  }
   .all-consoles,
   .all-sofas,
   .all-armchairs {
-    display: flex;
-    flex-direction: column;
+    width: 200px;
   }
   .all-consoles img,
   .all-sofas img,
@@ -12,10 +15,23 @@
     width: 180px;
     height: 120px;
   }
+  .main-products {
+    margin-bottom: 10px;
+  }
+  /* Motto */
+
+  .motto img {
+    width: 340px;
+    height: 120px;
+  }
+
   /* All card container */
+
   .products-cards {
     display: grid;
-    grid-template-columns: 1fr, 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-content: center;
   }
   .all-consoles:hover,
   .all-consoles:focus,
@@ -29,5 +45,11 @@
     box-shadow: 10px 10px 5px #e6fff9;
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
+  }
+  /* Sales */
+  .sales img {
+    width: 300px;
+    height: 150px;
+    background-color: aqua;
   }
 }

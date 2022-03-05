@@ -16,8 +16,8 @@ async function getAllAdminProducts() {
           <td>${product.title}</td>
           <td>${product.description}</td>
           <td>${product.price} RON</td>
-          <td><button class="deleteAdmin  btn adminButton" data-product-id =${product.id}>Delete</button></td>
-          <td><button class="editAdmin  btn adminButton" data-product-id =${product.id}>Edit ✏</button></td>
+          <td><button class="deleteAdmin  btn adminButton" data-product-id =${product.id}>␡</button></td>
+          <td><button class="editAdmin  btn adminButton" data-product-id =${product.id}> ✏</button></td>
         </tr>`
     )
     .join("");
