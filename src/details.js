@@ -17,9 +17,9 @@ window.addEventListener("load", async () => {
               <div class="titleDescription">
                 <h5 class="card-title">${product.title}</h5>
                 <div class="detailed-description">
-                  <p class="text text1">${product.detailedDescription}</p>
-                  <p class="text text1">${product.detailedDescription2}</p>
-                  <p class="text text1">${product.detailedDescription3}</p>
+                  <p class="text">${product.detailedDescription}</p>
+                  <p class="text">${product.detailedDescription2}</p>
+                  <p class="text">${product.detailedDescription3}</p>
                 </div>
                 <div class="warranty">
                   <h5 class="card-text">Timpul de livrare al produsului va fi oferit de un operator la confirmarea comenzii!</h5>

@@ -33,11 +33,21 @@
   .detailCard {
     display: flex;
     flex-direction: column;
-  }
-  .text1 {
-    font-size: 10px;
+    align-items: center;
+    justify-content: center;
   }
 
+  .detailed-description {
+    box-sizing: border-box;
+    width: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    width: 430px;
+  }
   /* All card container */
 
   .products-cards {

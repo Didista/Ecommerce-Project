@@ -84,7 +84,7 @@ function cartButtons(event) {
     updateCartInfo(cart);
   }
 
-  //Decrese qty
+  // Decrese qty
   else if (targetButton.classList.contains("decrement")) {
     if (productInCart.numberOfProducts > 1) {
       productInCart.numberOfProducts--;
