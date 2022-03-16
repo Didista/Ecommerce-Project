@@ -22,6 +22,7 @@
     align-items: center;
     margin-top: 20px;
   }
+
   .title-sofa,
   .title-console,
   .title-armchair {
@@ -38,16 +39,16 @@
   }
 
   .detailed-description {
-    box-sizing: border-box;
     width: 430px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
-
   .text {
     width: 430px;
   }
+
   /* All card container */
 
   .products-cards {

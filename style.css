@@ -293,8 +293,13 @@ body {
 .products-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  padding: 80px;
+  gap: 40px;
+  padding: 20px;
+}
+.main-products-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*Edit Cards*/
@@ -394,12 +399,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 .detailed-description {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: justify;
   width: 650px;
 }
 .text {
